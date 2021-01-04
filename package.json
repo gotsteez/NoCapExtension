@@ -1,0 +1,33 @@
+{
+  "name": "NoCapExtension",
+  "version": "1.0.0",
+  "description": "Easily solve any captcha from your device",
+  "main": "./dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zMrKrabz/NoCapExtension.git"
+  },
+  "keywords": [
+    "recaptcha",
+    "file",
+    "integrity",
+    "check",
+    "checks",
+    "nerve",
+    "nerveyyyy",
+    "file integrity checker",
+    "file integrity check",
+    "file integrity checks"
+  ],
+  "authors": "Flexagon#9696 & Phresh#6666",
+  "license": "MIT",
+  "homepage": "https://github.com/zMrKrabz/NoCapExtension",
+  "dependencies": {
+    "commander": "^6.2.1",
+    "crypto": "^1.0.1",
+    "fs": "0.0.1-security"
+  }
+}
