@@ -5,12 +5,12 @@ function listeners() {
     });
   }
 
-  // Listen for button click
-  // let loadCaptchaBtn = document.querySelector(".load-captcha");
-  // loadCaptchaBtn.addEventListener("click", () => {
-  //   console.log("here");
-  //   browser.tabs.query({ active: true, currentWindow: true }).then(loadCaptcha);
-  // });
+  // Listen for button  and attempts to load captcha
+  let loadCaptchaBtn = document.querySelector(".load-captcha");
+  loadCaptchaBtn.addEventListener("click", () => {
+    console.log("here");
+    browser.tabs.query({ active: true, currentWindow: true }).then(loadCaptcha);
+  });
 }
 
 /**
@@ -18,12 +18,12 @@ function listeners() {
  * Display the popup's error message, and hide the normal UI.
  */
 function reportExecuteScriptError(error) {
-  // document.querySelector("#popup-content").classList.add("hidden");
-  // document.querySelector("#error-content").classList.remove("hidden");
   console.log("Failed here");
   console.error(`Failed to execute content script: ${error.message}`);
 }
 
-browser.tabs.executeScript({ file: "/content_scripts/showCaptcha.js" });
-// .then(listeners)
-// .catch(reportExecuteScriptError);
+// executes the script, any errors gets reported
+browser.tabs
+  .executeScript({ file: "/content_scripts/showCaptcha.js" })
+  .then(listeners)
+  .catch(reportExecuteScriptError);
